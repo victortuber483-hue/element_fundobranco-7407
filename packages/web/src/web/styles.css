@@ -1,0 +1,192 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins-400.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root { color-scheme: light; --background: #f5f4f2; --foreground: #73777d; }
+html { background: #f5f4f2; }
+body { margin: 0; font-family: "Poppins", sans-serif; }
+.silver-card-area {
+  position: relative;
+  min-height: max(2400px, 260svh);
+  background: linear-gradient(180deg, #faf9f7 0, #f5f4f2 420px);
+  overflow: clip;
+  isolation: isolate;
+}
+
+/* Original post-scroll cards background: same grid, mask, trails and timing. */
+.bio-grid {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% 0;
+  width: min(100%, 1100px);
+  height: 100%;
+  pointer-events: none;
+  background-image:
+    linear-gradient(#9399a34d 1px, transparent 1px),
+    linear-gradient(90deg, #9399a34d 1px, transparent 1px);
+  background-size: 90px 90px;
+  mask-image: linear-gradient(transparent, #000 10%, #000 90%, transparent);
+  animation: vertex-grid-drift 16s linear infinite;
+  overflow: hidden;
+}
+.bio-grid i {
+  position: absolute;
+  top: -170px;
+  left: calc(50% - 360px);
+  width: 1px;
+  height: 150px;
+  background: linear-gradient(transparent, #737b89e6, transparent);
+  animation: vertex-line-travel 9s linear infinite;
+  box-shadow: 0 0 5px #8992a14d;
+}
+.bio-grid i:nth-child(2) { left: calc(50% - 180px); animation-delay: -3s; animation-duration: 12s; }
+.bio-grid i:nth-child(3) { left: 50%; animation-delay: -6s; animation-duration: 10s; }
+.bio-grid i:nth-child(4) { left: calc(50% + 180px); animation-delay: -2s; animation-duration: 13s; }
+.bio-grid i:nth-child(5) { left: calc(50% + 360px); animation-delay: -7s; }
+.bio-grid i:nth-child(6) {
+  top: 450px;
+  left: -200px;
+  width: 160px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #737b89cc, transparent);
+  animation: vertex-horizontal-line 12s linear infinite;
+}
+@keyframes vertex-grid-drift { to { background-position: 0 90px, 0 90px; } }
+@keyframes vertex-line-travel {
+  from { translate: 0 -150px; opacity: 0; }
+  10%, 85% { opacity: 1; }
+  to { translate: 0 2400px; opacity: 0; }
+}
+@keyframes vertex-horizontal-line {
+  from { translate: 0 0; opacity: 0; }
+  10%, 85% { opacity: 1; }
+  to { translate: 1300px 0; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bio-grid, .bio-grid i { animation: none; }
+}
